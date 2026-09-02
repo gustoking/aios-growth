@@ -1,32 +1,983 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>AIOS Growth - Presentation</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #fff; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        h1 { color: #333; }
-        .links { margin-top: 40px; }
-        a { display: inline-block; padding: 10px 20px; margin: 5px; text-decoration: none; border-radius: 5px; color: white; font-weight: bold; }
-        .k30 { background: #0097ed; }
-        .creative { background: #f09300; }
-        .landing { background: #06b6d4; }
-        .moments { background: #66c2a5; }
-        .queue { background: #d026cc; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forex Redemption — Trade With Precision. Reclaim Your Edge.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C96A;
+    --gold-dim: #7A6030;
+    --red: #C0392B;
+    --red-bright: #E74C3C;
+    --bg-deep: #040404;
+    --bg-dark: #0A0A0A;
+    --bg-mid: #111111;
+    --bg-card: #161616;
+    --text-white: #F0EDE8;
+    --text-muted: #888880;
+    --text-dim: #555550;
+    --border: rgba(201,168,76,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg-deep);
+    color: var(--text-white);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 24px 60px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 70%, rgba(192,57,43,0.08) 0%, transparent 60%),
+      linear-gradient(180deg, #040404 0%, #080605 50%, #040404 100%);
+  }
+
+  .hero-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,0.03) 80px),
+      repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,0.02) 80px);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+  }
+
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .eyebrow span {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid rgba(201,168,76,0.3);
+    background: rgba(201,168,76,0.05);
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(72px, 14vw, 160px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--text-white);
+    margin-bottom: 0;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.4s forwards;
+  }
+
+  .hero-title .word-forex {
+    display: block;
+    color: var(--text-white);
+  }
+
+  .hero-title .word-redemption {
+    display: block;
+    -webkit-text-stroke: 2px var(--gold);
+    color: transparent;
+    position: relative;
+  }
+
+  .hero-subtitle {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: clamp(18px, 3vw, 26px);
+    color: var(--text-muted);
+    margin: 28px 0 48px;
+    letter-spacing: 0.02em;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.6s forwards;
+  }
+
+  .hero-tagline {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--gold-dim);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 56px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.7s forwards;
+  }
+
+  .cta-group {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.9s forwards;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 18px 48px;
+    background: var(--gold);
+    color: #040404;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .btn-primary:hover::before { left: 100%; }
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(201,168,76,0.3);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    padding: 17px 48px;
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: transparent;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(201,168,76,0.08);
+    border-color: var(--gold);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.5s forwards;
+  }
+
+  .scroll-indicator span {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, var(--gold-dim), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 32px 24px;
+  }
+
+  .stats-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .stat {
+    text-align: center;
+    padding: 16px 24px;
+    border-right: 1px solid var(--border);
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-top: 6px;
+    display: block;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 100px 24px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1;
+    color: var(--text-white);
+    margin-bottom: 24px;
+  }
+
+  .section-title em {
+    font-style: normal;
+    -webkit-text-stroke: 1px var(--gold);
+    color: transparent;
+  }
+
+  /* ── PROBLEM SECTION ── */
+  .problem {
+    background: var(--bg-mid);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .problem::before {
+    content: '';
+    position: absolute;
+    right: -200px;
+    top: -200px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(192,57,43,0.06) 0%, transparent 70%);
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .problem-text p {
+    font-size: 19px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+
+  .problem-text p strong {
+    color: var(--text-white);
+    font-weight: 600;
+  }
+
+  .pain-list {
+    list-style: none;
+    margin-top: 32px;
+  }
+
+  .pain-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 17px;
+    color: var(--text-muted);
+  }
+
+  .pain-list li::before {
+    content: '✕';
+    color: var(--red);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .quote-block {
+    border-left: 3px solid var(--gold);
+    padding: 32px 40px;
+    background: rgba(201,168,76,0.04);
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '"';
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 120px;
+    color: var(--gold);
+    opacity: 0.15;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    line-height: 1;
+  }
+
+  .quote-block p {
+    font-style: italic;
+    font-size: 22px;
+    color: var(--text-white);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+
+  .quote-block cite {
+    display: block;
+    margin-top: 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--gold-dim);
+    font-style: normal;
+  }
+
+  /* ── FEATURES ── */
+  .features {
+    background: var(--bg-deep);
+  }
+
+  .features-header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+  }
+
+  .feature-card {
+    background: var(--bg-card);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .feature-card:hover { background: #1A1A1A; }
+  .feature-card:hover::before { opacity: 1; }
+
+  .feature-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    color: rgba(201,168,76,0.08);
+    line-height: 1;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .feature-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--text-white);
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+  }
+
+  .feature-desc {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .how {
+    background: var(--bg-mid);
+  }
+
+  .how-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 64px;
+    position: relative;
+  }
+
+  .how-steps::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), var(--gold-dim), transparent);
+  }
+
+  .step {
+    text-align: center;
+    padding: 0 24px;
+    position: relative;
+  }
+
+  .step-num {
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--gold-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    background: var(--bg-mid);
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-num span {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--gold);
+  }
+
+  .step h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--text-white);
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+  }
+
+  .step p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ── PRODUCT BOX ── */
+  .product {
+    background: var(--bg-deep);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%);
+  }
+
+  .product-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-image img {
+    max-width: 100%;
+    filter: drop-shadow(0 24px 48px rgba(0,0,0,0.8)) drop-shadow(0 0 80px rgba(201,168,76,0.1));
+    transition: transform 0.4s ease, filter 0.4s ease;
+  }
+
+  .product-image img:hover {
+    transform: scale(1.03) translateY(-8px);
+    filter: drop-shadow(0 40px 64px rgba(0,0,0,0.9)) drop-shadow(0 0 100px rgba(201,168,76,0.2));
+  }
+
+  .product-details .price-block {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 40px;
+    margin-top: 40px;
+  }
+
+  .price-was {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    color: var(--text-dim);
+    text-decoration: line-through;
+    letter-spacing: 0.1em;
+  }
+
+  .price-now {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+    margin: 8px 0;
+  }
+
+  .price-note {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .includes {
+    list-style: none;
+    margin-top: 32px;
+  }
+
+  .includes li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 16px;
+    color: var(--text-muted);
+  }
+
+  .includes li::before {
+    content: '→';
+    color: var(--gold);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  /* ── DISCLAIMER ── */
+  .disclaimer {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    padding: 40px 24px;
+  }
+
+  .disclaimer .container {
+    max-width: 800px;
+  }
+
+  .disclaimer p {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+  }
+
+  .disclaimer p + p {
+    margin-top: 12px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--bg-deep);
+    border-top: 1px solid var(--border);
+    padding: 40px 24px;
+  }
+
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.1); }
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-right: none; border-bottom: 1px solid var(--border); }
+    .problem-grid { grid-template-columns: 1fr; gap: 48px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .how-steps { grid-template-columns: repeat(2, 1fr); }
+    .how-steps::before { display: none; }
+    .product-inner { grid-template-columns: 1fr; }
+    footer .container { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+  }
+
+  @media (max-width: 600px) {
+    .how-steps { grid-template-columns: 1fr; }
+    .stats-inner { grid-template-columns: 1fr 1fr; }
+    .cta-group { flex-direction: column; align-items: center; }
+  }
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>AIOS Growth Presentation</h1>
-        <p>Welcome to the AIOS Growth framework interactive presentation.</p>
-        <div class="links">
-            <a href="k30.html" class="k30">K30 Lab</a>
-            <a href="creative.html" class="creative">Creative</a>
-            <a href="landing.html" class="landing">Landing</a>
-            <a href="moments.html" class="moments">Moments</a>
-            <a href="queue.html" class="queue">Queue</a>
-        </div>
+
+<!-- ═══════════════════════════════════════════════ HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="eyebrow"><span>Next Generation FX Trading &nbsp;·&nbsp; EST. 2009 &nbsp;·&nbsp; Reborn 2025</span></div>
+    <h1 class="hero-title">
+      <span class="word-forex">FOREX</span>
+      <span class="word-redemption">REDEMPTION</span>
+    </h1>
+    <p class="hero-subtitle">Fear can hold you prisoner. Knowledge sets you free.</p>
+    <p class="hero-tagline">The automated grid trading system rebuilt for today's markets</p>
+    <div class="cta-group">
+      <a href="#product" class="btn-primary">Get Instant Access — $97</a>
+      <a href="#how-it-works" class="btn-secondary">See How It Works</a>
     </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat reveal">
+      <span class="stat-num">8+</span>
+      <span class="stat-label">Grid Levels Per Trade</span>
+    </div>
+    <div class="stat reveal">
+      <span class="stat-num">4</span>
+      <span class="stat-label">Trading Modes</span>
+    </div>
+    <div class="stat reveal">
+      <span class="stat-num">MT4</span>
+      <span class="stat-label">Compatible Platform</span>
+    </div>
+    <div class="stat reveal">
+      <span class="stat-num">60</span>
+      <span class="stat-label">Day Money Back</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <div class="problem-grid">
+      <div class="problem-text reveal">
+        <span class="section-label">The Reality</span>
+        <h2 class="section-title">Most retail traders<br>lose. Here's <em>why.</em></h2>
+        <p>The forex market doesn't reward guesswork, emotion, or undisciplined manual trading. <strong>Over 70% of retail forex traders lose money</strong> — not because the market is rigged, but because they're fighting it the wrong way.</p>
+        <p>The problem isn't your analysis. It's your execution. Hesitation, fear, greed, inconsistency — these are the real enemies.</p>
+        <ul class="pain-list">
+          <li>Watching setups form then second-guessing the entry</li>
+          <li>Moving stop losses because the trade "feels" like it'll come back</li>
+          <li>Blowing accounts on single high-conviction trades that fail</li>
+          <li>No system, no consistency, no way to measure what's actually working</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="quote-block">
+          <p>"The market is a device for transferring money from the impatient to the patient."</p>
+          <cite>— Warren Buffett</cite>
+        </div>
+        <div class="quote-block" style="margin-top: 2px; border-left-color: var(--red);">
+          <p>"In trading, the most dangerous four words are: this time it's different."</p>
+          <cite>— Jesse Livermore</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ FEATURES -->
+<section class="features">
+  <div class="container">
+    <div class="features-header reveal">
+      <span class="section-label">The Solution</span>
+      <h2 class="section-title">What <em>Forex Redemption</em><br>gives you</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <span class="feature-num">01</span>
+        <h3 class="feature-title">Automated Grid System</h3>
+        <p class="feature-desc">The EA places a structured grid of orders above and below price automatically. No manual intervention required. No emotional decisions. The system executes with precision every time.</p>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-num">02</span>
+        <h3 class="feature-title">4 Trading Modes</h3>
+        <p class="feature-desc">Trade trend, counter-trend, buy-only, sell-only, or both sides simultaneously. Full or half-grid configurations give you control over risk exposure without complexity.</p>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-num">03</span>
+        <h3 class="feature-title">Smart Risk Management</h3>
+        <p class="feature-desc">Percentage-based lot sizing automatically scales position size to your account equity. Trailing stop functionality locks in profits as the market moves in your favour.</p>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-num">04</span>
+        <h3 class="feature-title">Flexible Configuration</h3>
+        <p class="feature-desc">Set your own grid interval, take profit targets, stop loss levels, and maximum trade counts. Works on standard and micro accounts, adaptable to your broker's specifications.</p>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-num">05</span>
+        <h3 class="feature-title">Auto Reset on Profit</h3>
+        <p class="feature-desc">When a trade closes in profit, the EA automatically clears all pending orders and resets the grid at current market price. Always fresh, always calibrated.</p>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-num">06</span>
+        <h3 class="feature-title">Lifetime Access</h3>
+        <p class="feature-desc">One purchase, lifetime licence. All future updates included. Dedicated support via email. Works on any MT4 broker — no monthly subscriptions, no hidden fees.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ HOW IT WORKS -->
+<section class="how" id="how-it-works">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom: 0;">
+      <span class="section-label">The Process</span>
+      <h2 class="section-title">Up and running<br>in <em>four steps</em></h2>
+    </div>
+    <div class="how-steps">
+      <div class="step reveal">
+        <div class="step-num"><span>01</span></div>
+        <h3>Purchase & Download</h3>
+        <p>Instant delivery to your inbox. The EA file, setup guide, and recommended settings — all included.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num"><span>02</span></div>
+        <h3>Install in MT4</h3>
+        <p>Drop the EA file into your MetaTrader 4 experts folder. One-click installation, no coding required.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num"><span>03</span></div>
+        <h3>Configure Settings</h3>
+        <p>Choose your pair, mode, and risk level using our pre-tested recommended parameter sets.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num"><span>04</span></div>
+        <h3>Let It Trade</h3>
+        <p>Attach to a chart and walk away. The EA handles entry, management, and exit automatically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ PRODUCT -->
+<section class="product" id="product">
+  <div class="container">
+    <div class="product-inner">
+      <div class="product-image reveal">
+        <img src="DVD-Case-2-Black400.jpg" alt="Forex Redemption EA Package" width="400" />
+      </div>
+      <div class="product-details reveal">
+        <span class="section-label">The Offer</span>
+        <h2 class="section-title">Get <em>Forex<br>Redemption</em><br>Today</h2>
+        <div class="price-block">
+          <span class="price-was">Regular Price: $197</span>
+          <span class="price-now">$97</span>
+          <p class="price-note">Launch pricing — limited time only</p>
+          <ul class="includes">
+            <li>Forex Redemption EA (.ex4 file)</li>
+            <li>Full setup & configuration guide (PDF)</li>
+            <li>Recommended settings for EURUSD, GBPUSD</li>
+            <li>Risk management framework</li>
+            <li>60-day unconditional money-back guarantee</li>
+            <li>Lifetime updates & email support</li>
+          </ul>
+          <a href="#" class="btn-primary" style="display:block; text-align:center; margin-top:32px;">
+            Access Forex Redemption Now →
+          </a>
+          <p style="text-align:center; margin-top:16px; font-family:'Space Mono',monospace; font-size:10px; color:var(--text-dim); letter-spacing:0.15em;">SECURE CHECKOUT · INSTANT DELIVERY</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ DISCLAIMER -->
+<div class="disclaimer">
+  <div class="container">
+    <p>RISK WARNING: Trading foreign exchange on margin carries a high level of risk and may not be suitable for all investors. Past performance is not indicative of future results. The high degree of leverage can work against you as well as for you. Before deciding to trade foreign exchange you should carefully consider your investment objectives, level of experience, and risk appetite.</p>
+    <p>EARNINGS DISCLAIMER: Results shown are not typical. Individual results will vary depending on account size, risk settings, market conditions, and trading experience. No representation is being made that any account will or is likely to achieve profits or losses similar to those discussed. Forex Redemption is an educational and analytical tool — it does not constitute financial advice.</p>
+    <p>© 2025 NextGenerationFXTrading.com · All rights reserved · <a href="privacypolicy.html" style="color:var(--gold-dim); text-decoration:none;">Privacy Policy</a> · <a href="mailto:support@forexredemption.com" style="color:var(--gold-dim); text-decoration:none;">Contact</a></p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-brand">FOREX REDEMPTION</div>
+    <ul class="footer-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Affiliates</a></li>
+      <li><a href="privacypolicy.html">Privacy</a></li>
+      <li><a href="mailto:support@forexredemption.com">Support</a></li>
+    </ul>
+    <div class="footer-copy">© 2025 NEXTGENERATIONFXTRADING.COM</div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
