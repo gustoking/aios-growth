@@ -1,16 +1,258 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Page</title>
-    <style>
-        body { font-family: Arial; margin: 0; padding: 20px; }
-        a { color: #0097ed; text-decoration: none; }
-    </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Fella Landing Page Experiment</title>
+<style>
+:root{
+  --ink:#112019; --muted:#69756f; --green:#0f6b45; --green-dark:#0a5436;
+  --soft:#f4f8f5; --line:#dce7df; --white:#fff; --cream:#fbf8ef;
+  --shadow:0 18px 55px rgba(18,39,28,.10);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fbfdfb}
+button{font:inherit}
+.site{min-height:100vh}
+.topbar{position:sticky;top:0;z-index:10;background:rgba(251,253,251,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.wrap{width:min(1160px,100%);margin:auto;padding:0 22px}
+.toprow{height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{font-size:26px;font-weight:950;letter-spacing:-.055em}
+.exp{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.exp button{border:1px solid var(--line);background:white;color:var(--muted);border-radius:999px;padding:9px 12px;font-size:12px;font-weight:850;cursor:pointer}
+.exp button.active{background:var(--ink);color:white;border-color:var(--ink)}
+.hero{padding:70px 0 45px;display:grid;grid-template-columns:1.08fr .92fr;gap:42px;align-items:center}
+.kicker{font-size:12px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--green)}
+h1{font-size:clamp(54px,7vw,92px);line-height:.88;letter-spacing:-.072em;margin:14px 0 22px}
+.lead{font-size:20px;line-height:1.48;color:var(--muted);max-width:650px}
+.ctaRow{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:28px 0 18px}
+.btn{border:0;border-radius:15px;padding:15px 19px;font-weight:900;cursor:pointer}
+.btn.primary{background:var(--green);color:white;box-shadow:0 10px 28px rgba(15,107,69,.18)}
+.btn.secondary{background:#eaf1ec;color:var(--ink)}
+.proof{display:flex;gap:18px;flex-wrap:wrap;margin-top:24px;color:#506059;font-size:13px;font-weight:750}
+.visual{background:linear-gradient(145deg,#e9f3ed,#f8fbf9);border:1px solid var(--line);border-radius:34px;padding:28px;min-height:520px;display:flex;align-items:flex-end;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.visual:before{content:"";position:absolute;width:330px;height:330px;border-radius:50%;background:#d5eadc;right:-70px;top:-90px}
+.visualCard{position:relative;background:white;border:1px solid var(--line);border-radius:24px;padding:24px;width:100%;z-index:2}
+.visualCard .big{font-size:44px;font-weight:950;letter-spacing:-.055em;line-height:1}
+.visualCard p{font-size:15px;color:var(--muted);line-height:1.45}
+.pill{display:inline-block;border-radius:999px;padding:7px 10px;background:#e2f2e8;color:#0a5938;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(38px,5vw,66px);letter-spacing:-.055em;line-height:.95;margin:10px 0 18px}
+.sectionLead{font-size:18px;color:var(--muted);max-width:760px;line-height:1.5}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.card{background:white;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 6px 18px rgba(18,39,28,.035)}
+.num{font-size:12px;font-weight:900;color:var(--green);letter-spacing:.08em}
+.card h3{font-size:23px;letter-spacing:-.035em;margin:8px 0}
+.card p{font-size:15px;color:var(--muted);line-height:1.45}
+.story{display:grid;grid-template-columns:.85fr 1.15fr;gap:28px;align-items:center}
+.quote{background:var(--ink);color:white;border-radius:30px;padding:34px}
+.quote p{font-size:26px;color:white;line-height:1.3;letter-spacing:-.025em;margin:0}
+.quote small{display:block;margin-top:18px;color:#b7c8be;font-weight:700}
+.moments{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.moment{background:white;border:1px solid var(--line);border-radius:18px;padding:18px}
+.moment b{display:block;font-size:18px;margin-bottom:5px}
+.moment span{font-size:13px;color:var(--muted)}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+details{background:white;border:1px solid var(--line);border-radius:17px;padding:16px 18px}
+summary{font-weight:850;cursor:pointer}
+details p{font-size:14px;color:var(--muted);line-height:1.5}
+.final{background:var(--ink);color:white;border-radius:34px;padding:42px;margin:40px 0}
+.final h2{color:white;margin-top:0}
+.final p{color:#b8c8bf}
+.disclaimer{font-size:12px;color:#7f8a84;line-height:1.5;margin:20px 0 80px}
+.debug{position:fixed;right:14px;bottom:14px;width:300px;max-width:calc(100% - 28px);background:rgba(17,32,25,.94);color:white;border-radius:18px;padding:14px;z-index:20;box-shadow:var(--shadow)}
+.debug h4{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#a9c2b5}
+.events{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;line-height:1.5;max-height:100px;overflow:auto;color:#d7e5dd}
+.closeDebug{position:absolute;right:10px;top:8px;border:0;background:transparent;color:#c8d8cf;font-size:18px;cursor:pointer}
+.tag{display:inline-block;background:#23382e;border-radius:8px;padding:4px 6px;font-size:9px;margin:2px}
+.hidden{display:none}
+@media(max-width:840px){
+ .hero,.story{grid-template-columns:1fr}.grid3,.faq,.moments{grid-template-columns:1fr}
+ .visual{min-height:400px}.debug{display:none}.toprow{height:auto;padding:12px 0;align-items:flex-start;flex-direction:column}
+ .hero{padding-top:42px}.wrap{padding-inline:17px}
+}
+</style>
 </head>
 <body>
-    <h1>AIOS Growth</h1>
-    <p>Content loading...</p>
-    <p><a href="index.html">← Back to home</a></p>
+<div class="site">
+<header class="topbar">
+  <div class="wrap toprow">
+    <div class="brand">fella<span style="color:var(--green)">.</span></div>
+    <div class="exp" aria-label="Experiment variants">
+      <span class="kicker" style="margin-right:4px">Landing test</span>
+      <button class="variant active" data-v="A">A · Reassurance</button>
+      <button class="variant" data-v="B">B · Direct</button>
+      <button class="variant" data-v="C">C · Identity</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section style="border-top:0">
+<div class="wrap hero">
+  <div>
+    <div class="kicker" id="heroKicker">For men ready to start properly</div>
+    <h1 id="heroTitle">You've tried losing weight before.<br>This time, don't do it alone.</h1>
+    <p class="lead" id="heroLead">Fella combines doctor-led treatment with ongoing support designed around real life — so you can make progress without turning your whole week upside down.</p>
+    <div class="ctaRow">
+      <button class="btn primary cta" data-place="hero">See if Fella could be right for me →</button>
+      <button class="btn secondary" id="howBtn">How it works</button>
+    </div>
+    <div class="proof">
+      <span>✓ Online clinical assessment</span>
+      <span>✓ Ongoing support</span>
+      <span>✓ No hidden-dose pricing surprises*</span>
+    </div>
+  </div>
+  <div class="visual">
+    <div class="visualCard">
+      <span class="pill">Progress isn't just the scale</span>
+      <div class="big" id="momentTitle">Feeling comfortable in your own clothes again.</div>
+      <p id="momentBody">The moments people care about are often ordinary: moving easier, showing up in photos, keeping up, feeling more like themselves.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="how">
+<div class="wrap">
+  <div class="kicker">Simple by design</div>
+  <h2>Start with the right question:<br>what has actually been getting in the way?</h2>
+  <p class="sectionLead">This prototype leads with recognition and support rather than medication-first messaging. Clinical eligibility and treatment decisions stay with Fella's medical team.</p>
+  <div class="grid3">
+    <div class="card"><div class="num">01</div><h3>Tell Fella about you</h3><p>Complete the clinical assessment and share relevant health information securely.</p></div>
+    <div class="card"><div class="num">02</div><h3>A clinician reviews it</h3><p>Fella's medical team determines whether treatment is appropriate and what options may be suitable.</p></div>
+    <div class="card"><div class="num">03</div><h3>Get ongoing support</h3><p>The aim is not just starting. It's making the experience easier to stay with over time.</p></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap story">
+  <div class="quote">
+    <p>“I didn't need another lecture. I needed something I could actually stick with.”</p>
+    <small>Illustrative customer-language concept · not a real testimonial</small>
+  </div>
+  <div>
+    <div class="kicker">Customer-state messaging</div>
+    <h2>Talk to the bloke who already knows what he “should” do.</h2>
+    <p class="sectionLead">He's probably tried diets, gyms, apps or starting again on Monday. The page does not need to explain that weight matters. It needs to reduce the feeling that this is another plan he will fail to maintain.</p>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="kicker">Outcome moments</div>
+  <h2>Progress people actually talk about.</h2>
+  <div class="moments">
+    <div class="moment"><b>“My old shirt fits again.”</b><span>A personal milestone, not a clinical claim.</span></div>
+    <div class="moment"><b>“I don't avoid photos now.”</b><span>Identity and confidence can be more emotionally salient than a number.</span></div>
+    <div class="moment"><b>“I kept up all day.”</b><span>Everyday life is where customers often notice change first.</span></div>
+    <div class="moment"><b>“I finally started.”</b><span>The purchase itself is a behavioural milestone worth reinforcing.</span></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="kicker">Objections</div>
+  <h2>Answer the questions that stop the click.</h2>
+  <div class="faq">
+    <details><summary>Is this just medication?</summary><p>No. This prototype positions Fella as a doctor-led service with clinical assessment and ongoing support. The medical team determines treatment suitability.</p></details>
+    <details><summary>Will I know the cost before starting?</summary><p>The live Fella site should remain the source of truth for current pricing, inclusions and terms. This concept avoids inventing live pricing.</p></details>
+    <details><summary>What if I've tried lots of things before?</summary><p>That is exactly the emotional state this page is designed around: not persuading someone they need to change, but showing a more supported route to starting again.</p></details>
+    <details><summary>Does completing the assessment guarantee treatment?</summary><p>No. Clinical eligibility and prescribing decisions belong to qualified clinicians after assessment.</p></details>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="final">
+    <div class="kicker" style="color:#99c4ad">One next step</div>
+    <h2 id="finalTitle">You don't need another Monday.<br>You need a start.</h2>
+    <p id="finalLead">Take the assessment and let the clinical team tell you whether Fella is appropriate for you.</p>
+    <button class="btn primary cta" data-place="final">Start the assessment →</button>
+  </div>
+  <div class="disclaimer">
+    Application prototype only. Not affiliated with or published by Fella/AIOS. No live medical assessment, prescribing or payment takes place here. Any live deployment would require current Fella pricing, referral terms, medical/legal review and compliance approval. *Pricing language should be verified against the live service before production use.
+  </div>
+</div>
+</section>
+</main>
+</div>
+
+<div class="debug" id="debug">
+  <button class="closeDebug" id="closeDebug" aria-label="Close debug panel">×</button>
+  <h4>Experiment instrumentation</h4>
+  <div style="margin-bottom:8px">
+    <span class="tag">variant_assigned</span><span class="tag">cta_clicked</span><span class="tag">section_viewed</span><span class="tag">assessment_started</span>
+  </div>
+  <div class="events" id="events"></div>
+</div>
+
+<script>
+const variants={
+ A:{
+  kicker:'For men ready to start properly',
+  title:"You've tried losing weight before.<br>This time, don't do it alone.",
+  lead:"Fella combines doctor-led treatment with ongoing support designed around real life — so you can make progress without turning your whole week upside down.",
+  moment:"Feeling comfortable in your own clothes again.",
+  momentBody:"The moments people care about are often ordinary: moving easier, showing up in photos, keeping up, feeling more like themselves.",
+  final:"You don't need another Monday.<br>You need a start.",
+  finalLead:"Take the assessment and let the clinical team tell you whether Fella is appropriate for you."
+ },
+ B:{
+  kicker:'Doctor-led weight-loss support for men',
+  title:"Stop restarting.<br>Start with proper support.",
+  lead:"If willpower-only plans have not lasted, Fella gives you a medically reviewed route with ongoing support built around real life.",
+  moment:"A plan designed to survive a busy week.",
+  momentBody:"Less motivational theatre. More clarity, clinical oversight and a path you can actually follow.",
+  final:"Ready to stop restarting?",
+  finalLead:"Complete the assessment and find out whether Fella may be suitable for you."
+ },
+ C:{
+  kicker:"For the man who's fed up of thinking about it",
+  title:"Feel like yourself again.",
+  lead:"Not a six-week transformation challenge. A doctor-led service designed to help men make meaningful progress with proper support behind them.",
+  moment:"Getting back to the version of you that shows up.",
+  momentBody:"Wear the clothes. Take the photo. Go on the trip. Keep up. The goal is bigger than a number.",
+  final:"Do something your future self notices.",
+  finalLead:"Start with the assessment. The clinical team takes it from there."
+ }
+};
+let active='A', seq=0;
+const events=document.getElementById('events');
+function log(name,meta={}){
+ seq++;
+ const t=new Date().toLocaleTimeString();
+ const line=document.createElement('div');
+ line.textContent=`${String(seq).padStart(2,'0')} ${t} · ${name} · ${JSON.stringify(meta)}`;
+ events.prepend(line);
+}
+function setVariant(v){
+ active=v;const d=variants[v];
+ document.querySelectorAll('.variant').forEach(b=>b.classList.toggle('active',b.dataset.v===v));
+ document.getElementById('heroKicker').textContent=d.kicker;
+ document.getElementById('heroTitle').innerHTML=d.title;
+ document.getElementById('heroLead').textContent=d.lead;
+ document.getElementById('momentTitle').textContent=d.moment;
+ document.getElementById('momentBody').textContent=d.momentBody;
+ document.getElementById('finalTitle').innerHTML=d.final;
+ document.getElementById('finalLead').textContent=d.finalLead;
+ log('variant_assigned',{variant:v});
+}
+document.querySelectorAll('.variant').forEach(b=>b.addEventListener('click',()=>setVariant(b.dataset.v)));
+document.querySelectorAll('.cta').forEach(b=>b.addEventListener('click',()=>{
+ log('cta_clicked',{variant:active,placement:b.dataset.place});
+ alert('Prototype only — in production this would hand off to the real Fella assessment flow.');
+}));
+document.getElementById('howBtn').addEventListener('click',()=>{log('section_jump',{to:'how'});document.getElementById('how').scrollIntoView({behavior:'smooth'})});
+document.getElementById('closeDebug').addEventListener('click',()=>document.getElementById('debug').classList.add('hidden'));
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)log('section_viewed',{id:e.target.id||'section',variant:active})}),{threshold:.55});
+document.querySelectorAll('section').forEach(s=>obs.observe(s));
+setVariant('A');
+</script>
 </body>
 </html>

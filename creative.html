@@ -1,16 +1,110 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Page</title>
-    <style>
-        body { font-family: Arial; margin: 0; padding: 20px; }
-        a { color: #0097ed; text-decoration: none; }
-    </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HELP A FELLA — Creative Lab</title>
+<style>
+:root{--ink:#102019;--muted:#68756e;--green:#0f6b45;--soft:#f3f7f4;--line:#dce6df;--white:#fff;--cream:#fbf8ef;--amber:#fff0c7}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fbfdfb}
+button{font:inherit}.wrap{width:min(1180px,100%);margin:auto;padding:0 22px}.hero{padding:70px 0 45px}.kicker{font-size:11px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--green)}
+h1{font-size:clamp(66px,11vw,140px);line-height:.82;letter-spacing:-.075em;margin:15px 0 25px}h2{font-size:clamp(38px,5vw,65px);line-height:.95;letter-spacing:-.055em;margin:10px 0 18px}
+.lead{font-size:20px;line-height:1.48;color:var(--muted);max-width:790px}.heroLine{font-size:26px;font-weight:850;letter-spacing:-.035em;max-width:850px}
+section{padding:58px 0;border-top:1px solid var(--line)}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:25px 0}.filter{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 13px;font-size:12px;font-weight:850;cursor:pointer}.filter.active{background:var(--ink);color:white;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:21px;display:flex;flex-direction:column;min-height:355px}.card:hover{border-color:#aabbb1}
+.tag{display:inline-block;align-self:flex-start;border-radius:999px;background:#e2f2e8;color:#0a5938;padding:6px 9px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em}
+.hook{font-size:30px;line-height:1;letter-spacing:-.045em;font-weight:950;margin:17px 0 10px}.copy{font-size:15px;color:var(--muted);line-height:1.45}.meta{margin-top:auto;border-top:1px solid var(--line);padding-top:13px;display:grid;gap:7px}.meta div{font-size:11px;color:var(--muted)}.meta b{color:var(--ink)}
+.btn{border:0;border-radius:13px;background:var(--ink);color:white;padding:11px 14px;font-weight:850;cursor:pointer;margin-top:13px}.btn.green{background:var(--green)}
+.loop{display:flex;gap:9px;align-items:center;overflow:auto;padding:20px 0}.node{min-width:135px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center;font-size:12px;font-weight:900}.arrow{color:#95a49c;font-size:22px}
+.detail{position:fixed;inset:0;background:rgba(10,20,15,.45);display:none;align-items:center;justify-content:center;padding:20px;z-index:20}.detail.open{display:flex}.panel{background:white;border-radius:26px;padding:28px;width:min(650px,100%);max-height:90vh;overflow:auto}.panelTop{display:flex;justify-content:space-between;gap:20px}.close{border:0;background:#edf1ee;border-radius:50%;width:38px;height:38px;font-size:22px;cursor:pointer}
+.script{background:var(--soft);border-radius:16px;padding:18px;font-size:17px;line-height:1.45;margin:18px 0}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{border:1px solid var(--line);border-radius:14px;padding:12px}.metric small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;font-weight:900}.metric b{font-size:15px}
+.system{background:var(--ink);color:white;border-radius:30px;padding:30px}.system h2{color:white}.system p{color:#b7c8be}.big{font-size:50px;font-weight:950;letter-spacing:-.055em}
+.note{font-size:12px;color:var(--muted);line-height:1.45}.warning{background:var(--amber);border-radius:14px;padding:13px;font-size:12px;color:#69500b;font-weight:700;margin-top:18px}
+@media(max-width:850px){.grid{grid-template-columns:1fr}.metrics{grid-template-columns:1fr}.wrap{padding-inline:17px}.hero{padding-top:48px}}
+</style>
 </head>
 <body>
-    <h1>AIOS Growth</h1>
-    <p>Content loading...</p>
-    <p><a href="index.html">← Back to home</a></p>
+<div class="wrap hero">
+ <div class="kicker">Creative distribution prototype</div>
+ <h1>HELP<br>A FELLA.</h1>
+ <div class="heroLine">One brand-native idea. Multiple creative hypotheses. Every asset has a job beyond “getting engagement.”</div>
+ <p class="lead">The creative question isn't “what should Fella post?” It's: <b>which insight can create attention, qualified demand and eventually customers who create customers?</b></p>
+</div>
+
+<section><div class="wrap">
+ <div class="kicker">Creative testing board</div><h2>Same audience. Different reasons to stop.</h2>
+ <div class="toolbar">
+  <button class="filter active" data-f="all">All concepts</button><button class="filter" data-f="truth">Uncomfortable truth</button><button class="filter" data-f="identity">Identity</button><button class="filter" data-f="social">Social / referral</button><button class="filter" data-f="progress">Progress</button>
+ </div>
+ <div class="grid" id="grid"></div>
+</div></section>
+
+<section><div class="wrap">
+ <div class="kicker">Distribution system</div><h2>Creative is the start of the loop.</h2>
+ <p class="lead">The ad or post should not live in isolation. Match the message through the landing experience, customer journey and eventual advocacy moment.</p>
+ <div class="loop">
+  <div class="node">CREATIVE<br>HOOK</div><div class="arrow">→</div><div class="node">MATCHED<br>LANDING PAGE</div><div class="arrow">→</div><div class="node">ASSESSMENT</div><div class="arrow">→</div><div class="node">CUSTOMER</div><div class="arrow">→</div><div class="node">MILESTONE</div><div class="arrow">→</div><div class="node">HELP A FELLA</div><div class="arrow">→</div><div class="node">NEW<br>CUSTOMER</div><div class="arrow">→</div><div class="node">K30</div>
+ </div>
+</div></section>
+
+<section><div class="wrap">
+ <div class="system">
+  <div class="kicker" style="color:#96c0aa">The test</div>
+  <h2>Which creative wins?</h2>
+  <div class="big">I don't know.</div>
+  <p style="font-size:21px"><strong style="color:white">That's the point.</strong> Ship them. Tag every customer back to the creative that acquired them. Follow the cohort.</p>
+  <div class="loop" style="margin:10px 0">
+    <div class="node" style="color:var(--ink)">CREATIVE</div><div class="arrow">→</div>
+    <div class="node" style="color:var(--ink)">CTR</div><div class="arrow">→</div>
+    <div class="node" style="color:var(--ink)">CAC</div><div class="arrow">→</div>
+    <div class="node" style="color:var(--ink)">CONVERSION</div><div class="arrow">→</div>
+    <div class="node" style="color:var(--ink)">RETENTION</div><div class="arrow">→</div>
+    <div class="node" style="color:var(--ink)">ADVOCACY</div><div class="arrow">→</div>
+    <div class="node" style="color:var(--ink)">K30</div>
+  </div>
+  <p>A cheaper click does not automatically mean a better customer. A higher-CAC creative could still win if its cohort converts better, retains longer or creates more customers downstream.</p>
+  <div class="big" style="font-size:42px;margin-top:26px">Which creative creates the most valuable customer?</div>
+  <p style="font-size:22px;color:white;font-weight:900">Let's test it.</p>
+ </div>
+ <div class="warning">Application concept only. Public-facing execution in prescription healthcare would require medical/legal/compliance review. Customer referral mechanics and public social promotion should follow the live programme terms and applicable UK advertising rules.</div>
+</div></section>
+
+<div class="detail" id="detail" role="dialog" aria-modal="true">
+ <div class="panel">
+  <div class="panelTop"><div><div class="kicker" id="dcat"></div><h2 id="dtitle" style="font-size:48px"></h2></div><button class="close" id="close">×</button></div>
+  <div class="script" id="dscript"></div>
+  <div class="metrics"><div class="metric"><small>Format</small><b id="dformat"></b></div><div class="metric"><small>Destination</small><b id="ddest"></b></div><div class="metric"><small>Primary signal</small><b id="dmetric"></b></div></div>
+  <h3>Hypothesis</h3><p class="copy" id="dhyp"></p>
+  <h3>K30 relationship</h3><p class="copy" id="dk30"></p>
+  <p class="note">Concept copy, not approved live advertising.</p>
+ </div>
+</div>
+
+<script>
+const concepts=[
+ {cat:'truth',label:'Uncomfortable truth',title:'The Photo One',hook:"He's always the one taking the photo.",copy:"Sometimes the thing that bothers you isn't the scale. It's quietly finding reasons not to be in the picture.",format:'15–20 sec UGC / Reel',dest:'Identity landing variant',metric:'Qualified landing starts',hyp:"Recognition of a private behaviour creates stronger self-identification than generic weight-loss messaging.",k30:"Acquire customers through an emotionally specific insight, then measure whether this cohort has different advocacy behaviour.",script:"OPEN: group photo setup. One bloke automatically reaches for the phone. VO: “Funny how you can become the designated photographer without anyone ever appointing you.” Beat. “Sometimes progress is just wanting to be in the photo again.” → Fella service CTA."},
+ {cat:'truth',label:'Uncomfortable truth',title:'The Monday One',hook:'Monday. Definitely Monday.',copy:"If you've restarted enough times, another motivational speech probably isn't the answer.",format:'Fast-cut short / static',dest:'Reassurance landing variant',metric:'Assessment-start rate',hyp:"Calling out the repeated-restart loop may reduce resistance among prospects tired of conventional diet messaging.",k30:"Tests whether a distinct customer-state message improves qualified acquisition without overpromising outcomes.",script:"MONDAY 1: “I'll start Monday.” MONDAY 2: “Busy week. Next Monday.” MONDAY 3: same line. CUT: “Maybe the problem isn't knowing what to do. Maybe you need proper support to start.” → Fella."},
+ {cat:'identity',label:'Identity',title:'The Clothes One',hook:"That shirt isn't 'basically the same fit.'",copy:"There are little negotiations you have with yourself that nobody else hears.",format:'Creator talking head',dest:'Identity landing variant',metric:'Hold rate → click-through',hyp:"Specific everyday observations can create a stronger stop than abstract transformation promises.",k30:"Creates a recognizable story that could later become a customer-shareable milestone format.",script:"Creator holds up an old shirt: “I kept telling myself it had shrunk. Then I realised I'd been having the same argument with this shirt for two years.” Beat. “You know your own moment.” → Fella."},
+ {cat:'progress',label:'Progress',title:'The Progress One',hook:"Sometimes progress is saying yes to the photo.",copy:"Not every meaningful change needs to be a dramatic before-and-after.",format:'Customer-story template',dest:'Story-led landing page',metric:'Story completion / qualified CTR',hyp:"Non-scale milestones may feel more believable, human and shareable than transformation-first creative.",k30:"Outcome moments can later trigger advocacy prompts when customers have something personally meaningful to share.",script:"TEXT ON SCREEN: “Progress isn't always a number.” Clips: putting on a shirt / joining a photo / walking out the door. END: “What would progress look like for you?” → Fella."},
+ {cat:'social',label:'Social / referral',title:'Know a Fella?',hook:'Know a Fella who keeps saying he’ll sort it?',copy:"The brand name itself can become a memory device for word of mouth.",format:'Organic concept / referral UX',dest:'Help a Fella flow',metric:'Qualified referral actions',hyp:"Brand-native language may make the referral action more memorable and less transactional.",k30:"Directly tests advocacy participation and downstream referred-customer creation.",script:"“You probably know a Fella who's been talking about making a change for months. Maybe he knows you.” END CARD: KNOW A FELLA? / HELP A FELLA →"},
+ {cat:'social',label:'Social / referral',title:'The Mate One',hook:"You'd tell your mate his tyre was flat.",copy:"Some things are easy to point out. Other conversations need a better opening.",format:'15 sec situational short',dest:'Referral / advocacy flow',metric:'Share-start → referred conversion',hyp:"Friendship framing could make sharing feel like useful information rather than promotion.",k30:"Tests a human motivation for advocacy against incentive-first framing.",script:"Mate points at flat tyre: “Your tyre's gone.” CUT. “Some things are easy to tell your mate.” Beat. “Others aren't.” END: HELP A FELLA."},
+ {cat:'identity',label:'Identity',title:'The Quiet One',hook:"Men can talk for three hours and still not say what's bothering them.",copy:"Use the tension between male friendship and private struggles without lecturing the audience.",format:'Talking-head / podcast cut',dest:'Reassurance landing variant',metric:'3-sec hold + qualified CTR',hyp:"A culturally recognisable truth earns attention before the service is introduced.",k30:"Potential top-of-funnel territory that also supports the Help a Fella advocacy idea.",script:"“Men are incredible. We can spend three hours together, solve football, politics and somebody else's relationship — and still not mention the thing actually bothering us.” → “Sometimes starting is easier with proper support.”"},
+ {cat:'progress',label:'Progress',title:'I Finally Started',hook:'Day 1 is a milestone too.',copy:"Reinforce the decision itself rather than demanding an immediate transformation story.",format:'Post-purchase card / organic template',dest:'First 1,000 Seconds flow',metric:'Advocacy-flow participation',hyp:"Decision reinforcement immediately after purchase may create a psychologically safer advocacy moment.",k30:"Direct connection to the published 1.21% ≤1,000-second sharing signal.",script:"CARD: “DAY 1. I finally started.” Small line: “No dramatic before-and-after. Just the bit where I stopped putting it off.” Optional share → HELP A FELLA."}
+];
+const grid=document.getElementById('grid');
+function render(filter='all'){
+ grid.innerHTML=concepts.map((c,i)=>({c,i})).filter(x=>filter==='all'||x.c.cat===filter).map(({c,i})=>`
+ <article class="card">
+  <span class="tag">${c.label}</span><div class="hook">${c.hook}</div><div class="copy">${c.copy}</div>
+  <div class="meta"><div><b>FORMAT</b> · ${c.format}</div><div><b>HYPOTHESIS</b> · ${c.hyp}</div><div><b>MEASURE</b> · ${c.metric}</div></div>
+  <button class="btn" data-i="${i}">Open concept →</button>
+ </article>`).join('');
+ grid.querySelectorAll('.btn').forEach(b=>b.addEventListener('click',()=>openConcept(+b.dataset.i)));
+}
+function openConcept(i){const c=concepts[i];document.getElementById('dcat').textContent=c.label;document.getElementById('dtitle').textContent=c.title;document.getElementById('dscript').textContent=c.script;document.getElementById('dformat').textContent=c.format;document.getElementById('ddest').textContent=c.dest;document.getElementById('dmetric').textContent=c.metric;document.getElementById('dhyp').textContent=c.hyp;document.getElementById('dk30').textContent=c.k30;document.getElementById('detail').classList.add('open')}
+document.getElementById('close').addEventListener('click',()=>document.getElementById('detail').classList.remove('open'));
+document.getElementById('detail').addEventListener('click',e=>{if(e.target.id==='detail')e.currentTarget.classList.remove('open')});
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.f)}));
+render();
+</script>
 </body>
 </html>
