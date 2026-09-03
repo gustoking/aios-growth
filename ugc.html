@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>UGC Concepts | AIOS Product Growth Case Study</title>
+<style>
+:root{
+  --ink:#101b16;--muted:#65726b;--green:#0f6b45;--green2:#dff3e7;--cream:#fbf7ee;--soft:#f4f8f5;
+  --line:#dfe8e2;--white:#fff;--amber:#fff2c9;--blue:#e8f0ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#fbfdfb;color:var(--ink)}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1160px,100%);margin:auto;padding:0 28px}
+.kicker{font-size:12px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--green)}
+h1{font-size:clamp(48px,8vw,92px);letter-spacing:-.07em;line-height:.88;margin:14px 0 20px}
+p{font-size:17px;line-height:1.55;color:var(--muted);max-width:680px}
+strong{color:var(--ink)}
+header{padding:26px 0}
+.headerRow{display:flex;justify-content:space-between;align-items:center}
+.brand{font-size:14px;font-weight:900;letter-spacing:-.02em;color:var(--ink)}
+.brand span{color:var(--green)}
+.hero{padding:20px 0 46px;border-bottom:1px solid var(--line)}
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:32px}
+.reel{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:26px;
+  padding:16px;
+  box-shadow:0 7px 24px rgba(16,27,22,.05);
+}
+.reelNum{font-size:11px;font-weight:900;color:#9dacA4;letter-spacing:.08em;padding:0 4px 12px}
+.frame{
+  position:relative;
+  width:100%;
+  aspect-ratio:9/16;
+  background:#0c1512;
+  border-radius:18px;
+  overflow:hidden;
+}
+.frame video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  background:#0c1512;
+}
+.reelMeta{padding:14px 4px 4px}
+.reelMeta h3{font-size:18px;letter-spacing:-.03em;margin:0 0 6px}
+.reelMeta p{font-size:13px;line-height:1.45;margin:0;max-width:none}
+.tag{display:inline-block;border-radius:999px;background:var(--green2);color:#0a5938;padding:5px 9px;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+
+.note{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:20px 22px;font-size:14px;color:var(--muted);line-height:1.55;margin-top:26px}
+.note strong{color:var(--ink)}
+
+footer{padding:34px 0 50px;text-align:center}
+footer p{margin:0 auto;font-size:13px;color:var(--muted)}
+
+@media(max-width:640px){
+  .wrap{padding:0 18px}
+  section{padding:40px 0}
+}
+</style>
+</head>
+<body>
+
+<a href="index.html" style="position:fixed;top:18px;right:18px;z-index:9999;background:#101b16;color:#fff;padding:11px 18px;border-radius:999px;font-size:12px;font-weight:900;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 8px 24px rgba(16,27,22,.18);display:inline-flex;align-items:center;gap:6px;">← Home</a>
+
+<header>
+  <div class="wrap headerRow">
+    <div class="brand">AIOS <span>/</span> Fella</div>
+    <div class="kicker">Product Growth Proof-of-Work</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">From concept to camera</div>
+    <h1>UGC creative, made real.</h1>
+    <p>The <a href="creative.html" style="color:var(--green);font-weight:700;text-decoration:underline">creative lab</a> proposed the hooks — these are short, 15-second UGC-style clips bringing a few of those concepts to life. Rough cuts, not final production.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Clips</div>
+    <div class="grid">
+
+      <div class="reel">
+        <div class="reelNum">01 · UK</div>
+        <div class="frame">
+          <video controls playsinline preload="metadata" poster="">
+            <source src="ugc-1-uk.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="reelMeta">
+          <span class="tag">The Photo One</span>
+          <h3>Clip 1 — UK</h3>
+          <p>15-sec UGC concept — swap in a real caption once you've picked the final cut.</p>
+        </div>
+      </div>
+
+      <div class="reel">
+        <div class="reelNum">01 · USA</div>
+        <div class="frame">
+          <video controls playsinline preload="metadata" poster="">
+            <source src="ugc-1-usa.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="reelMeta">
+          <span class="tag">The Photo One</span>
+          <h3>Clip 1 — USA</h3>
+          <p>15-sec UGC concept — swap in a real caption once you've picked the final cut.</p>
+        </div>
+      </div>
+
+      <div class="reel">
+        <div class="reelNum">02</div>
+        <div class="frame">
+          <video controls playsinline preload="metadata" poster="">
+            <source src="ugc-2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="reelMeta">
+          <span class="tag">The Monday One</span>
+          <h3>Clip 2</h3>
+          <p>15-sec UGC concept — swap in a real caption once you've picked the final cut.</p>
+        </div>
+      </div>
+
+      <div class="reel">
+        <div class="reelNum">03</div>
+        <div class="frame">
+          <video controls playsinline preload="metadata" poster="">
+            <source src="ugc-3.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="reelMeta">
+          <span class="tag">Know a Fella?</span>
+          <h3>Clip 3</h3>
+          <p>15-sec UGC concept — swap in a real caption once you've picked the final cut.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note">
+      <strong>Editing this page:</strong> each clip is one <code>.reel</code> block above. To add or remove a clip, copy or delete a whole block. Change the <code>src="ugc-1-uk.mp4"</code> filename to match your file, swap the <span class="tag" style="margin:0 4px">tag</span> label to the concept it's based on, and edit the caption text. For a clip with regional variants, duplicate its block and use a <code>-uk</code> / <code>-usa</code> suffix on both the filename and the heading, same as Clip 1.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Gusto King · Manchester</strong> — Application prototype. Not affiliated with or published by Fella/AIOS.</p>
+</footer>
+
+</body>
+</html>
