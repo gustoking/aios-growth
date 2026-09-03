@@ -22,11 +22,13 @@ strong{font-weight:830}
 a.inline{color:var(--green);font-weight:800;text-decoration:underline;text-underline-offset:2px}
 .rule{height:1px;background:var(--line);margin:30px 0}
 .proof{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:28px 0 30px}.proof div{background:white;border:1px solid var(--line);border-radius:15px;padding:16px}.proof b{display:block;font-size:12px;margin-bottom:6px}.proof span{font-size:11px;line-height:1.45;color:var(--muted)}
+.built{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:16px 0 6px}.built a{display:block;background:white;border:1px solid var(--line);border-radius:15px;padding:16px;text-decoration:none;color:inherit;transition:border-color .15s ease}.built a:hover{border-color:var(--green)}.built b{display:block;font-size:13px;margin-bottom:6px;color:var(--green)}.built span{font-size:11px;line-height:1.45;color:var(--muted)}
+.builtNote{font-size:12px;color:var(--muted)}
 .quote{background:var(--green);color:white;border-radius:20px;padding:24px 27px;margin:30px 0}.quote b{display:block;font-size:23px;line-height:1.2;letter-spacing:-.03em}.quote small{display:block;color:#bcd0c3;margin-top:10px;line-height:1.5}
 .sign{margin-top:31px;font-size:14px}.sign b{font-size:19px;letter-spacing:-.02em}
 .ps{margin-top:28px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;line-height:1.6;color:var(--muted)}
 .footer{display:flex;justify-content:space-between;gap:15px;padding:0 64px 36px;color:#7b8781;font-size:10px;text-transform:uppercase;letter-spacing:.11em}
-@media(max-width:700px){.page{width:100%;margin:0;box-shadow:none}.top,.body{padding-left:26px;padding-right:26px}.footer{padding-left:26px;padding-right:26px}h1{font-size:40px}.lead{font-size:21px}.proof{grid-template-columns:1fr}.top:after{font-size:48px}}
+@media(max-width:700px){.page{width:100%;margin:0;box-shadow:none}.top,.body{padding-left:26px;padding-right:26px}.footer{padding-left:26px;padding-right:26px}h1{font-size:40px}.lead{font-size:21px}.proof{grid-template-columns:1fr}.built{grid-template-columns:1fr}.top:after{font-size:48px}}
 @media print{body{background:white}.page{width:100%;margin:0;box-shadow:none;min-height:0}}
 </style>
 </head>
@@ -47,9 +49,11 @@ a.inline{color:var(--green);font-weight:800;text-decoration:underline;text-under
 
   <p class="lead">Your job advert caught my eye because the word <strong>“intense”</strong> resonated with me. Then I saw the number: <strong>K30 from 0.0835 to 0.30.</strong> That was the bit I couldn't leave alone.</p>
 
-  <p>My background is a slightly unusual mix of <strong>direct-response marketing, affiliate growth, product building, automation and AI.</strong> I've spent years around funnels, offers, traffic, attribution and conversion, and I've also become technical enough to build prototypes, work with APIs and databases, deploy things and have a useful conversation with Engineering rather than throwing ideas over the wall.</p>
+  <p>My background is a slightly unusual mix of <strong>direct-response marketing, affiliate growth, product building, automation and AI.</strong> I've built my own projects — <a class="inline" href="https://citruswelljournal.com/" target="_blank" rel="noopener">Citrus Well Journal</a>, <a class="inline" href="https://assetos.co.uk/" target="_blank" rel="noopener">AssetOS</a> and <a class="inline" href="https://profitclawai.com/" target="_blank" rel="noopener">ProfitClaw AI</a> — and worked on other direct-response and affiliate properties where I've had to think about what actually matters: traffic, offers, funnels, attribution and conversion. I've also become technical enough to build prototypes, work with APIs and databases, deploy things and have a useful conversation with Engineering rather than throwing ideas over the wall.</p>
 
   <p>I've worked closely for years with a highly technical direct-response entrepreneur who has sold more than 50,000 products and is now building an affiliate/performance network. That has given me a view from both sides: how a publisher thinks about traffic and offers, and how the advertiser/network side has to think about tracking, customers, commissions, payouts, refunds and attribution.</p>
+
+  <p>I haven't done this exact job at a company of AIOS's scale, and I want to be upfront about that. What I can show you instead is how I think, how fast I pick up a new system, and what I actually do when I'm handed a number I find interesting.</p>
 
   <p>I've learned a lot doing that. But I've also realised the pace is too slow for me. <strong>I want high energy, autonomy, a difficult number and the ability to build, test and get things done.</strong> Your role reads much closer to how I naturally work.</p>
 
@@ -58,8 +62,6 @@ a.inline{color:var(--green);font-weight:800;text-decoration:underline;text-under
     <div><b>I don't just want to say “test referrals”.</b><span>I prototyped <a class="inline" href="moments.html">a post-purchase experiment</a> around the first 1,000 seconds.</span></div>
     <div><b>I changed my mind where the evidence changed.</b><span>I initially suspected weak tracking. Your stack suggests the better question is: what owns truth?</span></div>
   </div>
-
-  <p>Rather than write a long application telling you what I <em>would</em> do, I started doing some of the work from the outside. I pulled apart the published referral metrics, built <a class="inline" href="index.html">a K30 lab</a>, mocked up an experiment and looked at acquisition, advocacy, attribution and the point where customer outcomes can become distribution.</p>
 
   <p>I'm not going to pretend I know exactly how to get K30 to 0.30 without seeing your internal data. I don't. I want to know K30 by source, cohort, creative and customer type; the referral conversion path; the time-to-referral distribution; what is genuinely incremental; and where the canonical customer and experiment data actually lives.</p>
 
@@ -75,6 +77,16 @@ a.inline{color:var(--green);font-weight:800;text-decoration:underline;text-under
   <p><strong>I don't know which combination gets K30 from 0.0835 to 0.30 yet. Give me the number and let me find out.</strong></p>
 
   <div class="sign">Best,<br><b>Gusto King</b><br>Manchester</div>
+
+  <div class="rule"></div>
+
+  <div class="kicker" style="margin-bottom:14px">Some things I've actually built</div>
+  <div class="built">
+    <a href="https://citruswelljournal.com/" target="_blank" rel="noopener"><b>Citrus Well Journal ↗</b><span>Built and owned by me. A direct-response health/wellness affiliate property — traffic, curiosity, content, offer and conversion.</span></a>
+    <a href="https://assetos.co.uk/" target="_blank" rel="noopener"><b>AssetOS ↗</b><span>A product I'm building. Property technology combining workflows, records, automation and AI. Evidence I can move beyond marketing and build software.</span></a>
+    <a href="https://profitclawai.com/" target="_blank" rel="noopener"><b>ProfitClaw AI ↗</b><span>Experimental AI product. Evidence that I keep building with new tools rather than waiting for permission to learn them.</span></a>
+  </div>
+  <p class="builtNote">These aren't here to claim I've built the next unicorn. They're here because I build things.</p>
 
   <div class="ps"><strong>P.S.</strong> I've attached the proof-of-work rather than filling this letter with screenshots and theory. <a class="inline" href="index.html">The interactive application</a> is the main piece; <a class="inline" href="shop.html">the Manchester physical concept</a> is simply one supplementary experiment showing how my brain works.</div>
 </section>
