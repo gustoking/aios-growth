@@ -16,16 +16,20 @@ a{color:inherit;text-decoration:none}
 .wrap{width:min(1240px,100%);margin:auto;padding:0 26px}
 .kicker{font-size:11px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--green)}
 strong{color:var(--ink)}
+
 header{padding:16px 0}
 .headerRow{display:flex;justify-content:space-between;align-items:center}
 .brand{font-size:13px;font-weight:900;letter-spacing:-.02em;color:var(--ink)}
 .brand span{color:var(--green)}
+
 .hero{padding:18px 0 22px}
 .heroRow{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .heroNum{font-size:clamp(30px,4.4vw,52px);font-weight:950;letter-spacing:-.055em;line-height:1;white-space:nowrap}
 .heroArrow{color:#9dacA4}
 .heroLead{font-size:14.5px;line-height:1.4;color:var(--muted);max-width:480px;margin:0}
+
 main{flex:1;display:flex;flex-direction:column;justify-content:center;padding-bottom:18px}
+
 .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
 .card{
   background:var(--white);
@@ -73,14 +77,17 @@ main{flex:1;display:flex;flex-direction:column;justify-content:center;padding-bo
   gap:5px;
 }
 .card:hover .cardLink{color:#0a5a38}
+
 .principle{padding:36px 0;border-top:1px solid var(--line)}
 .principle h2{font-size:clamp(28px,4vw,44px);letter-spacing:-.05em;line-height:.98;margin:8px 0 14px}
 .principle p{font-size:15px;line-height:1.5;color:var(--muted);max-width:700px}
 .loop{display:flex;gap:8px;align-items:center;overflow:auto;padding:16px 0 4px}
 .node{min-width:112px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center;font-size:10.5px;font-weight:900}
 .arrow{color:#9dacA4;font-weight:800;font-size:16px}
+
 footer{padding:26px 0 34px;text-align:center;border-top:1px solid var(--line)}
 footer p{margin:0 auto;font-size:12.5px;color:var(--muted)}
+
 @media(max-width:1080px){
   .grid{grid-template-columns:repeat(3,1fr)}
   main{justify-content:flex-start}
@@ -89,6 +96,7 @@ footer p{margin:0 auto;font-size:12.5px;color:var(--muted)}
   .grid{grid-template-columns:1fr}
   .heroRow{flex-direction:column;align-items:flex-start;gap:8px}
   .wrap{padding:0 18px}
+  .headerRow{flex-direction:column;align-items:flex-start;gap:10px}
 }
 </style>
 </head>
@@ -97,7 +105,10 @@ footer p{margin:0 auto;font-size:12.5px;color:var(--muted)}
 <header>
   <div class="wrap headerRow">
     <div class="brand">AIOS <span>/</span> Fella</div>
-    <div class="kicker">Product Growth Proof-of-Work</div>
+    <div style="display:flex;align-items:center;gap:18px">
+      <div class="kicker">Product Growth Proof-of-Work</div>
+      <a href="cover-letter.html" style="background:var(--ink);color:#fff;padding:9px 15px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;align-items:center;gap:5px;">Read the cover letter →</a>
+    </div>
   </div>
 </header>
 
