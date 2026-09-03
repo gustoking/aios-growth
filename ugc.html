@@ -24,8 +24,7 @@ header{padding:26px 0}
 .brand span{color:var(--green)}
 .hero{padding:20px 0 46px;border-bottom:1px solid var(--line)}
 section{padding:56px 0;border-bottom:1px solid var(--line)}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:32px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,300px));gap:22px;margin-top:32px;justify-content:start}
 .reel{
   background:var(--white);
   border:1px solid var(--line);
@@ -53,13 +52,10 @@ section{padding:56px 0;border-bottom:1px solid var(--line)}
 .reelMeta h3{font-size:18px;letter-spacing:-.03em;margin:0 0 6px}
 .reelMeta p{font-size:13px;line-height:1.45;margin:0;max-width:none}
 .tag{display:inline-block;border-radius:999px;background:var(--green2);color:#0a5938;padding:5px 9px;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
-
 .note{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:20px 22px;font-size:14px;color:var(--muted);line-height:1.55;margin-top:26px}
 .note strong{color:var(--ink)}
-
 footer{padding:34px 0 50px;text-align:center}
 footer p{margin:0 auto;font-size:13px;color:var(--muted)}
-
 @media(max-width:640px){
   .wrap{padding:0 18px}
   section{padding:40px 0}
@@ -118,38 +114,10 @@ footer p{margin:0 auto;font-size:13px;color:var(--muted)}
         </div>
       </div>
 
-      <div class="reel">
-        <div class="reelNum">02</div>
-        <div class="frame">
-          <video controls playsinline preload="metadata" poster="">
-            <source src="ugc-2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="reelMeta">
-          <span class="tag">The Monday One</span>
-          <h3>Clip 2</h3>
-          <p>15-sec UGC concept — swap in a real caption once you've picked the final cut.</p>
-        </div>
-      </div>
-
-      <div class="reel">
-        <div class="reelNum">03</div>
-        <div class="frame">
-          <video controls playsinline preload="metadata" poster="">
-            <source src="ugc-3.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="reelMeta">
-          <span class="tag">Know a Fella?</span>
-          <h3>Clip 3</h3>
-          <p>15-sec UGC concept — swap in a real caption once you've picked the final cut.</p>
-        </div>
-      </div>
-
     </div>
 
     <div class="note">
-      <strong>Editing this page:</strong> each clip is one <code>.reel</code> block above. To add or remove a clip, copy or delete a whole block. Change the <code>src="ugc-1-uk.mp4"</code> filename to match your file, swap the <span class="tag" style="margin:0 4px">tag</span> label to the concept it's based on, and edit the caption text. For a clip with regional variants, duplicate its block and use a <code>-uk</code> / <code>-usa</code> suffix on both the filename and the heading, same as Clip 1.
+      <strong>Editing this page:</strong> each clip is one <code>.reel</code> block above. To add another clip, copy a whole block and paste it inside the <code>.grid</code>. Change the <code>src="ugc-1-uk.mp4"</code> filename to match your file, swap the <span class="tag" style="margin:0 4px">tag</span> label to the concept it's based on, and edit the caption text.
     </div>
   </div>
 </section>

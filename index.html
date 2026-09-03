@@ -3,72 +3,96 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>UGC Concepts | AIOS Product Growth Case Study</title>
+<title>0.0835 → 0.30 | AIOS Product Growth Case Study</title>
 <style>
 :root{
   --ink:#101b16;--muted:#65726b;--green:#0f6b45;--green2:#dff3e7;--cream:#fbf7ee;--soft:#f4f8f5;
   --line:#dfe8e2;--white:#fff;--amber:#fff2c9;--blue:#e8f0ff;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#fbfdfb;color:var(--ink)}
+html,body{height:100%}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#fbfdfb;color:var(--ink);display:flex;flex-direction:column}
 a{color:inherit;text-decoration:none}
-.wrap{width:min(1160px,100%);margin:auto;padding:0 28px}
-.kicker{font-size:12px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--green)}
-h1{font-size:clamp(48px,8vw,92px);letter-spacing:-.07em;line-height:.88;margin:14px 0 20px}
-p{font-size:17px;line-height:1.55;color:var(--muted);max-width:680px}
+.wrap{width:min(1240px,100%);margin:auto;padding:0 26px}
+.kicker{font-size:11px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--green)}
 strong{color:var(--ink)}
-header{padding:26px 0}
+header{padding:16px 0}
 .headerRow{display:flex;justify-content:space-between;align-items:center}
-.brand{font-size:14px;font-weight:900;letter-spacing:-.02em;color:var(--ink)}
+.brand{font-size:13px;font-weight:900;letter-spacing:-.02em;color:var(--ink)}
 .brand span{color:var(--green)}
-.hero{padding:20px 0 46px;border-bottom:1px solid var(--line)}
-section{padding:56px 0;border-bottom:1px solid var(--line)}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:32px}
-.reel{
+.hero{padding:18px 0 22px}
+.heroRow{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.heroNum{font-size:clamp(30px,4.4vw,52px);font-weight:950;letter-spacing:-.055em;line-height:1;white-space:nowrap}
+.heroArrow{color:#9dacA4}
+.heroLead{font-size:14.5px;line-height:1.4;color:var(--muted);max-width:480px;margin:0}
+main{flex:1;display:flex;flex-direction:column;justify-content:center;padding-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.card{
   background:var(--white);
   border:1px solid var(--line);
-  border-radius:26px;
-  padding:16px;
-  box-shadow:0 7px 24px rgba(16,27,22,.05);
-}
-.reelNum{font-size:11px;font-weight:900;color:#9dacA4;letter-spacing:.08em;padding:0 4px 12px}
-.frame{
-  position:relative;
-  width:100%;
-  aspect-ratio:9/16;
-  background:#0c1512;
   border-radius:18px;
-  overflow:hidden;
+  padding:18px 16px;
+  box-shadow:0 6px 18px rgba(16,27,22,.04);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  display:flex;
+  flex-direction:column;
+  min-height:230px;
 }
-.frame video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  background:#0c1512;
+.card:hover{
+  transform:translateY(-5px);
+  border-color:#c3d8cb;
+  box-shadow:0 16px 34px rgba(16,27,22,.10);
 }
-.reelMeta{padding:14px 4px 4px}
-.reelMeta h3{font-size:18px;letter-spacing:-.03em;margin:0 0 6px}
-.reelMeta p{font-size:13px;line-height:1.45;margin:0;max-width:none}
-.tag{display:inline-block;border-radius:999px;background:var(--green2);color:#0a5938;padding:5px 9px;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
-
-.note{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:20px 22px;font-size:14px;color:var(--muted);line-height:1.55;margin-top:26px}
-.note strong{color:var(--ink)}
-
-footer{padding:34px 0 50px;text-align:center}
-footer p{margin:0 auto;font-size:13px;color:var(--muted)}
-
+.cardNum{font-size:11px;font-weight:900;color:#9dacA4;letter-spacing:.08em}
+.card h3{font-size:18px;letter-spacing:-.03em;margin:8px 0 6px;color:var(--ink);line-height:1.15}
+.card p{font-size:12.5px;line-height:1.42;margin:0 0 12px;color:var(--muted)}
+.badge{
+  display:inline-block;
+  align-self:flex-start;
+  padding:5px 9px;
+  border-radius:999px;
+  font-size:9px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  margin-bottom:10px;
+}
+.b-k30{background:var(--green2);color:#0a5a38}
+.b-creative{background:var(--amber);color:#705300}
+.b-landing{background:var(--blue);color:#254d8a}
+.b-moments{background:#f3e8ff;color:#5b2d91}
+.b-queue{background:#ffe4e8;color:#9a1f3b}
+.b-ugc{background:#fde3d3;color:#8a3d0c}
+.cardLink{
+  margin-top:auto;
+  font-weight:850;
+  font-size:12.5px;
+  color:var(--green);
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+}
+.card:hover .cardLink{color:#0a5a38}
+.principle{padding:36px 0;border-top:1px solid var(--line)}
+.principle h2{font-size:clamp(28px,4vw,44px);letter-spacing:-.05em;line-height:.98;margin:8px 0 14px}
+.principle p{font-size:15px;line-height:1.5;color:var(--muted);max-width:700px}
+.loop{display:flex;gap:8px;align-items:center;overflow:auto;padding:16px 0 4px}
+.node{min-width:112px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center;font-size:10.5px;font-weight:900}
+.arrow{color:#9dacA4;font-weight:800;font-size:16px}
+footer{padding:26px 0 34px;text-align:center;border-top:1px solid var(--line)}
+footer p{margin:0 auto;font-size:12.5px;color:var(--muted)}
+@media(max-width:1080px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  main{justify-content:flex-start}
+}
 @media(max-width:640px){
+  .grid{grid-template-columns:1fr}
+  .heroRow{flex-direction:column;align-items:flex-start;gap:8px}
   .wrap{padding:0 18px}
-  section{padding:40px 0}
 }
 </style>
 </head>
 <body>
-
-<a href="index.html" style="position:fixed;top:18px;right:18px;z-index:9999;background:#101b16;color:#fff;padding:11px 18px;border-radius:999px;font-size:12px;font-weight:900;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 8px 24px rgba(16,27,22,.18);display:inline-flex;align-items:center;gap:6px;">← Home</a>
 
 <header>
   <div class="wrap headerRow">
@@ -79,78 +103,81 @@ footer p{margin:0 auto;font-size:13px;color:var(--muted)}
 
 <section class="hero">
   <div class="wrap">
-    <div class="kicker">From concept to camera</div>
-    <h1>UGC creative, made real.</h1>
-    <p>The <a href="creative.html" style="color:var(--green);font-weight:700;text-decoration:underline">creative lab</a> proposed the hooks — these are short, 15-second UGC-style clips bringing a few of those concepts to life. Rough cuts, not final production.</p>
+    <div class="kicker">I started before applying</div>
+    <div class="heroRow">
+      <div class="heroNum">0.0835 <span class="heroArrow">→</span> 0.30</div>
+      <p class="heroLead">An outside-in Product Growth case study for AIOS / Fella — five interactive pieces walking through how I'd start finding the number.</p>
+    </div>
   </div>
 </section>
 
-<section>
+<main>
   <div class="wrap">
-    <div class="kicker">Clips</div>
     <div class="grid">
+      <a class="card" href="k30.html">
+        <span class="badge b-k30">Case Study</span>
+        <div class="cardNum">01</div>
+        <h3>K30 Lab</h3>
+        <p>The full case study — decomposing K30, an interactive sensitivity model, and paths to 0.30.</p>
+        <span class="cardLink">Open →</span>
+      </a>
 
-      <div class="reel">
-        <div class="reelNum">01 · UK</div>
-        <div class="frame">
-          <video controls playsinline preload="metadata" poster="">
-            <source src="ugc-1-uk.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="reelMeta">
-          <span class="tag">The Photo One</span>
-          <h3>Clip 1 — UK</h3>
-          <p>15-sec UGC concept — swap in a real caption once you've picked the final cut.</p>
-        </div>
-      </div>
+      <a class="card" href="creative.html">
+        <span class="badge b-creative">Creative</span>
+        <div class="cardNum">02</div>
+        <h3>Creative Lab</h3>
+        <p>Eight creative concepts for "Help a Fella" — hooks, scripts, and the hypothesis behind each.</p>
+        <span class="cardLink">Browse →</span>
+      </a>
 
-      <div class="reel">
-        <div class="reelNum">01 · USA</div>
-        <div class="frame">
-          <video controls playsinline preload="metadata" poster="">
-            <source src="ugc-1-usa.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="reelMeta">
-          <span class="tag">The Photo One</span>
-          <h3>Clip 1 — USA</h3>
-          <p>15-sec UGC concept — swap in a real caption once you've picked the final cut.</p>
-        </div>
-      </div>
+      <a class="card" href="landing.html">
+        <span class="badge b-landing">Landing</span>
+        <div class="cardNum">03</div>
+        <h3>Landing Page</h3>
+        <p>A live 3-variant landing page test — reassurance, direct, and identity messaging.</p>
+        <span class="cardLink">Try it →</span>
+      </a>
 
-      <div class="reel">
-        <div class="reelNum">02</div>
-        <div class="frame">
-          <video controls playsinline preload="metadata" poster="">
-            <source src="ugc-2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="reelMeta">
-          <span class="tag">The Monday One</span>
-          <h3>Clip 2</h3>
-          <p>15-sec UGC concept — swap in a real caption once you've picked the final cut.</p>
-        </div>
-      </div>
+      <a class="card" href="moments.html">
+        <span class="badge b-moments">Product</span>
+        <div class="cardNum">04</div>
+        <h3>Moment Engine</h3>
+        <p>An interactive prototype testing the best moment to ask a customer to share.</p>
+        <span class="cardLink">Run it →</span>
+      </a>
 
-      <div class="reel">
-        <div class="reelNum">03</div>
-        <div class="frame">
-          <video controls playsinline preload="metadata" poster="">
-            <source src="ugc-3.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="reelMeta">
-          <span class="tag">Know a Fella?</span>
-          <h3>Clip 3</h3>
-          <p>15-sec UGC concept — swap in a real caption once you've picked the final cut.</p>
-        </div>
-      </div>
+      <a class="card" href="queue.html">
+        <span class="badge b-queue">Process</span>
+        <div class="cardNum">05</div>
+        <h3>Test Queue</h3>
+        <p>What to test first — a ranked, sortable queue of experiments with evidence behind each.</p>
+        <span class="cardLink">See it →</span>
+      </a>
 
+      <a class="card" href="ugc.html">
+        <span class="badge b-ugc">UGC</span>
+        <div class="cardNum">06</div>
+        <h3>UGC Clips</h3>
+        <p>Short 15-sec UGC-style clips bringing a couple of the creative hooks to life.</p>
+        <span class="cardLink">Watch →</span>
+      </a>
     </div>
+  </div>
+</main>
 
-    <div class="note">
-      <strong>Editing this page:</strong> each clip is one <code>.reel</code> block above. To add or remove a clip, copy or delete a whole block. Change the <code>src="ugc-1-uk.mp4"</code> filename to match your file, swap the <span class="tag" style="margin:0 4px">tag</span> label to the concept it's based on, and edit the caption text. For a clip with regional variants, duplicate its block and use a <code>-uk</code> / <code>-usa</code> suffix on both the filename and the heading, same as Clip 1.
+<section class="principle">
+  <div class="wrap">
+    <div class="kicker">Operating principle</div>
+    <h2>Every result changes the queue.</h2>
+    <div class="loop">
+      <div class="node">DATA</div><div class="arrow">→</div>
+      <div class="node">QUESTION</div><div class="arrow">→</div>
+      <div class="node">TEST</div><div class="arrow">→</div>
+      <div class="node">RESULT</div><div class="arrow">→</div>
+      <div class="node">UPDATE<br>QUEUE</div><div class="arrow">→</div>
+      <div class="node">NEXT<br>TEST</div>
     </div>
+    <p style="margin-top:14px">I don't know which combination gets AIOS from <strong>0.0835</strong> to <strong>0.30+</strong> yet — I don't have the internal data. This is how I'd start finding out.</p>
   </div>
 </section>
 
